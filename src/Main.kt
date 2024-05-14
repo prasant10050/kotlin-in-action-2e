@@ -4,6 +4,9 @@ import ch02.colors.getWarmthFromSensor
 import ch02.colors.mix
 import geometry.shapes.Rectangle
 import geometry.shapes.createUnitSquare
+import strings.join
+import strings.joinToString
+import strings.lastChar
 
 fun main() {
     val person = Person("Bob", true, 0.0)
@@ -35,6 +38,18 @@ fun main() {
     println(getWarmthFromSensor())
 
     println(mix(Color.BLUE,Color.YELLOW))
+
+    val list = listOf(1, 2, 3)
+    println(joinToString(list, "; ", "(", ")"))
+    // (1; 2; 3)
+
+    println(joinToString(list, " ", " ", "."))
+    println(joinToString(list, separator = ",", prefix = "[", postfix = "]"))
+    println(joinToString(list))
+    println(joinToString(list, ";"))
+    println("Prasant".lastChar())
+
+    println(listOf("one", "two", "eight").join(" "))
 }
 
 class Person(
@@ -55,3 +70,4 @@ class Company {
             field = value
         }
 }
+
