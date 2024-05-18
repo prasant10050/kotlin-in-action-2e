@@ -4,9 +4,7 @@ import ch02.colors.getWarmthFromSensor
 import ch02.colors.mix
 import geometry.shapes.Rectangle
 import geometry.shapes.createUnitSquare
-import strings.join
-import strings.joinToString
-import strings.lastChar
+import strings.*
 
 fun main() {
     val person = Person("Bob", true, 0.0)
@@ -50,6 +48,25 @@ fun main() {
     println("Prasant".lastChar())
 
     println(listOf("one", "two", "eight").join(" "))
+
+    val sb = StringBuilder("Kotlin?")
+    println(sb.lastChar)
+    // ?
+    sb.lastChar = '!'
+    println(sb)
+    // Kotlin!
+
+    val view: View = Button()
+    // NoOverridingForExtensionFunctions
+    view.showOff()
+    // NoOverridingForExtensionFunctions
+    view.click()
+
+    val name:String?=null
+    fun showNameLength(name: String?){
+        println(name?.length ?: 0)
+    }
+    showNameLength(name = null);
 }
 
 class Person(

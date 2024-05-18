@@ -22,3 +22,20 @@ fun Collection<String>.join(
     prefix: String = "",
     postfix: String = ""
 ) = joinToString(separator, prefix, postfix)
+
+var StringBuilder.lastChar: Char
+    get() = this.get(length - 1) //
+    set(value) { //
+        this.setCharAt(length - 1, value)
+    }
+
+open class View {
+    open fun click() = println("View clicked")
+}
+
+class Button : View() {
+    override fun click() = println("Button clicked")
+}
+
+fun View.showOff() = println("I'm a view!")
+fun Button.showOff() = println("I'm a button!")
